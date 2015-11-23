@@ -14,16 +14,18 @@ if(file_exists("Global.php")){
              isset($_POST['Quantidade']) 
      
  )
-     {
-         $nome=$_POST['Nome'];
-         $valor=$_POST['Valor'];
+     {   
+         $Nome=$_POST['Nome'];
+         $Valor=$_POST['Valor'];
          $Quantidade=$_POST['Quantidade'];
+         $Data=(isset($_POST['Data']) ? $_POST["Data"]:"");
          
-         $SQL="";
-         $preparo=  conexao()->prepare($SQL);
-         //$preparo->bindValue("",$Nome);
-         //$preparo->bindValue("",$Valor);
-        // $preparo->bindValue("",$Quantidade);
+         $SQL="INSERT INTO `produtos`(`Nome`, `Valor`, `Quantidade`, `Data`) values (:Nome, :Valor, :Quantidade, :Data);";
+         $preparo = conexao()->prepare($SQL);
+         $preparo->bindValue(":Nome",$Nome);
+         $preparo->bindValue(":Valor",$Valor);
+         $preparo->bindValue(":Quantidade",$Quantidade);
+         $preparo->bindValue(":Data",$Data);
          $preparo->execute();
          
           if($preparo->rowCount() == 1){
