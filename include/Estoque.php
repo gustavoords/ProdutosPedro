@@ -14,6 +14,7 @@ if(file_exists("Global.php")){
              isset($_POST['Quantidade']) 
      
  )
+                
      {   
          $Nome=$_POST['Nome'];
          $Valor=$_POST['Valor'];
@@ -36,5 +37,33 @@ if(file_exists("Global.php")){
      }
  }
      
-
-
+ function listar(){
+        $SQL="SELECT * FROM produtos WHERE 1;";
+        $preparo = conexao()->prepare($SQL);
+        $preparo->execute();
+        while($linha = $preparo->fetch(PDO::FETCH_ASSOC)){
+            echo"<tr>";
+            echo"<td><a value='Excluir' href='?Excluir=".$linha['Id']."'>Excluir</a></td>";
+            echo"<td>".$linha['Id']."</td>";
+            echo"<td>".$linha['Nome']."</td>";
+            echo"<td>".$linha['Valor']."</td>";
+            echo"<td>".$linha['Quantidade']."</td>";
+            echo"<td>".$linha['Data']."</td>";
+            echo"<tr>";
+            
+        }
+     }
+     
+   function excluir(){ 
+       //executando o delete
+                         $sql11 = "DELETE FROM produtos where `Id`=:Id;";
+                         $prepare = conexao()->prepare($sql11);
+                         $prepare->bindValue(":Id", $_GET['Excluir']);
+                         $prepare->execute();
+                     }
+    
+   
+   
+                
+     
+         

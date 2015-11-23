@@ -17,7 +17,7 @@ input[type="text"]{
     border: 1px solid #CCC;
     margin-top: 30px;
     float: center;
-    margin-left: 100px
+    margin-left:400px;
    
     
 }
@@ -48,4 +48,9 @@ input[type="submit"]:active{
     
      background:#FFF;
     color:#333;
+}
+.Quantidade{
+    
+    margin-right: 800px;
+    
 }
