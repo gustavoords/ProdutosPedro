@@ -5,9 +5,8 @@
 }
 
 center{
-    width:90px;
-    margin:100px auto;
-    margin-left: 100px;
+   position: relative;
+   
 }
 
 input[type="text"]{
@@ -16,8 +15,7 @@ input[type="text"]{
     padding-right: 0px;
     border: 1px solid #CCC;
     margin-top: 30px;
-    float: center;
-    margin-left:400px;
+    transition: ease-in-out 0.21s;
    
     
 }
@@ -30,17 +28,18 @@ input[type="text"]:focus{
 
 
 input[type="submit"]{
-    float: right;
-    margin-right: 700px;
+    
     padding:10px;
     border: 1px solid #CCC;
     background:#CCC;
+    transition: linear 0.1s;
     
 }
 
 input[type="submit"]:hover{
-    
+     padding: 15px;
      background:#333;
+     margin-top: -2px;
     
 }
 

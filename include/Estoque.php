@@ -44,6 +44,7 @@ if(file_exists("Global.php")){
         while($linha = $preparo->fetch(PDO::FETCH_ASSOC)){
             echo"<tr>";
             echo"<td><a value='Excluir' href='?Excluir=".$linha['Id']."'>Excluir</a></td>";
+            echo"<td><a value='Editar' href='?Editar=".$linha['Id']."'>Editar</a></td>";
             echo"<td>".$linha['Id']."</td>";
             echo"<td>".$linha['Nome']."</td>";
             echo"<td>".$linha['Valor']."</td>";
@@ -62,6 +63,25 @@ if(file_exists("Global.php")){
                          $prepare->execute();
                      }
     
+                     function editar(){
+                         //editando tabela
+                         
+                          $SQL="UPDATE * FROM produtos WHERE `Id`=:Id;;";
+                          $preparo = conexao()->prepare($SQL);
+                          $preparo->execute();
+        while($linha = $preparo->fetch(PDO::FETCH_ASSOC)){
+                    echo"<tr>";
+                    echo"<td>".$linha['Id']."</td>";
+                    echo"<td>".$linha['Nome']."</td>";
+                    echo"<td>".$linha['Valor']."</td>";
+                    echo"<td>".$linha['Quantidade']."</td>";
+                    echo"<td>".$linha['Data']."</td>";
+                    echo"<tr>";
+            
+        }
+                         
+                         
+                     }
    
    
                 

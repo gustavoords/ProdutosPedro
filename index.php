@@ -10,17 +10,18 @@ include'./template/header.php';
 ?>
 
 <?php salvar(); ?>
-
+<center>
 <form method="post">
     <div class="center">
-        <h2 style="text-align: center;">Cadastro de Produtos</h2>
-        Nome:<input type="text" name="Nome" /></br>
-        Valor: <input type="text" name="Valor" /></br>
-        Quantidade: <input class=Quantidade type="text" name="Quantidade" /></br>
- Data de Validade:<input type="text" name="Data" /></br>
+        <h2>Cadastro de Produtos</h2>
+        Nome:<p><input type="text" name="Nome" /></br>
+        Valor: </br><input type="text" name="Valor" /></br>
+        Quantidade: </br><input type="text" name="Quantidade" /></br>
+ Data de Validade:</br><input type="text" name="Data" /></br></br>
            <input type="submit" value="Cadastrar" name="botao"/>
     </div>
 </form>
+    </center>
 
 <?php
 include'./template/footer.php';
