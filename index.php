@@ -1,27 +1,26 @@
 <?php
 
 
-include'./include/Global.php';
-include'./include/Estoque.php';
-$title = "Controle de Estoque";
-include'./template/header.php';
-
-
+    include './includes/Global.php';
+    include './includes/Estoque.php';
+    $title = "Controle de Estoque";
+    include './template/header.php';
+    
+    
 ?>
-
 <?php salvar(); ?>
-<center>
+
 <form method="post">
     <div class="center">
-        <h2>Cadastro de Produtos</h2>
-        Nome:<p><input type="text" name="Nome" /></br>
-        Valor: </br><input type="text" name="Valor" /></br>
-        Quantidade: </br><input type="text" name="Quantidade" /></br>
- Data de Validade:</br><input type="text" name="Data" /></br></br>
-           <input type="submit" value="Cadastrar" name="botao"/>
+        <h2 style="text-align: center;">Cadastro de Produtos</h2>
+        Nome: <input type="text" name="nome" />
+        Valor: <input type="text" name="valor" />
+        Quantidade: <input type="text" name="qtd" />
+        Data de Validade: <input type="text" name="data" />
+        <input type="submit" value="Cadastrar" />
     </div>
 </form>
-    </center>
 
 <?php
-include'./template/footer.php';
+    include './template/footer.php';
+?>
